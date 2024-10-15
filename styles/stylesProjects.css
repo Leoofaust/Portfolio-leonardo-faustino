@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantir que padding e border não afetem o tamanho total */
+}
+
+h1 {
+    font-size: 36px;
+    font-family: 'Krona One', sans-serif;
+    color: #22D4FD;
+    text-decoration: none;
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #22D4FD;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    color: #F6F6F6;
+}
+
+
+
+
+.main { 
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: black;
+    color: #F6F6F6;
+    display: flex;
+    flex-direction: column; /* Para garantir que os elementos internos sejam organizados verticalmente */
+    justify-content: space-between; /* Para criar espaço entre o conteúdo e o rodapé */
+
+}
+
+.titulo__projetos {
+    text-align: center;
+    margin-top: 10%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.paragrafo__projetos {
+    text-align: center;
+    margin-top: 2%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+
+
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 30px;
+
+
+    flex-wrap: wrap; /* Para que os cards possam se organizar em múltiplas linhas em telas pequenas */
+}
+
+.card {
+    width: 100%;
+    max-width: 360px; /* Ajuste para garantir que os cards não fiquem muito grandes em telas maiores */
+    margin: 10px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#333, #333);
+    transition: all .5s;
+    
+}
+
+.card:hover {
+    background-image: linear-gradient(#22D4FD, #2c4ed6);
+}
+
+.card .img {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+    flex-wrap: wrap;
+}
+
+/* Especificando imagens diferentes para cada card */
+.card-imc .img {
+    background-image: url('../assets/calculadora\ ia.png');
+}
+
+.card-forca .img {
+    background-image: url('../assets/FORCA.png');
+}
+
+.card-one .img {
+    background-image: url('../assets/one.png');
+}
+
+.card-green .img {
+    background-image: url('../assets/green.png');
+}
+
+.card:hover .img {
+    width: 429px;
+    opacity: 1;
+}
+
+.card .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card .content p {
+    margin: 0;
+}
+
+.card .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card .content .desc {
+    font-size: 17.5px;
+    font-weight: 100;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card:hover .arrow {
+    transform: rotate(0);
+}
+
+.card .arrow span {
+    font-size: 24px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .cabecalho {
+        padding: 5% 5%; /* Ajuste de padding para telas menores */
+    }
+
+    .cabecalho__menu {
+        flex-direction: column; /* Links empilhados em telas pequenas */
+        gap: 20px; /* Redução do gap */
+    }
+
+    .titulo__projetos {
+        font-size: 24px; /* Diminuído para telas menores */
+    }
+
+    .paragrafo__projetos {
+        font-size: small; /* Ajustado para melhor visualização em telas pequenas */
+    }
+
+    .card {
+        max-width: 300px; /* Cards menores em telas menores */
+        margin: 10px auto;
+    }
+
+    .card .img {
+        height: 180px; /* Ajustado para telas menores */
+    }
+
+    .card .content .title {
+        font-size: 18px; /* Texto menor em telas pequenas */
+    }
+
+    .card .content .desc {
+        font-size: 15px; /* Texto menor em telas pequenas */
+    }
+}
+
+/* Responsividade para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px; /* Reduzido para melhor visualização em celulares */
+    }
+
+    .cabecalho__menu__link {
+        font-size: 18px; /* Links menores em celulares */
+    }
+
+    .titulo__projetos {
+        font-size: 20px;
+    }
+
+    .paragrafo__projetos {
+        font-size: small;
+    }
+
+    .card {
+        max-width: 280px; /* Cards menores ainda para celulares */
+    }
+
+    .card .img {
+        height: 160px; /* Ajustado para celulares */
+    }
+
+    .rodape {
+        font-size: 20px; /* Diminuído para manter a legibilidade em telas pequenas */
+        padding: 36px; /* Ajustado para mais espaço no rodapé em telas pequenas */
+    }
+}

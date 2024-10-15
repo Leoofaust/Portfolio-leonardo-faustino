@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    color: #F6F6F6;
+}
+
+.cabecalho {
+    padding: 2% 5%; /* Reduzido para evitar excesso de espaço em telas menores */
+}
+
+.cabecalho__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Diminuído para ficar mais compacto em telas menores */
+}
+
+.cabecalho__menu__link {
+ 
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #22D4FD;
+    text-decoration: none;
+}
+
+.apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    margin: 5% 5%; /* Reduzido para adaptar melhor em telas menores */
+}
+
+.apresentacao__conteudo {
+    margin-top: 3%;
+    width: 100%; /* Ajuste para ocupar o máximo em telas menores */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.apresentacao__conteudo__titulo,
+.apresentacao__conteudo__titulo__sobre {
+    margin-top: 3%;
+    color: #22D4FD;
+    font-size: 32px; /* Ajuste para ser mais legível em telas menores */
+    font-family: 'Krona One', sans-serif;
+}
+
+.destaque {
+    margin-top: 7%;
+    font-size: 32px; /* Ajuste para ser mais legível em telas menores */
+    font-family: 'Krona One', sans-serif;
+}
+
+
+
+    
+.apresentacao__conteudo__paragrafo {
+    font-size: 18px; /* Reduzido para melhorar a leitura em dispositivos menores */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.apresentacao__conteudo__botao {
+    margin-top: 7%;
+    margin-bottom: 7%;
+    gap: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: 'Krona One', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.apresentacao__links__link {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+    border: 2px solid #22D4FD;
+    width: 100%; /* Ajuste para ocupar 100% do espaço em telas menores */
+    max-width: 280px; /* Mantém limite em telas grandes */
+    border-radius: 16px;
+    font-size: 20px; /* Ajustado para ficar menor em dispositivos móveis */
+    padding: 16px; /* Reduzido para telas menores */
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.apresentacao__links__link:hover {
+    background-color: #272727;
+}
+
+.rodape {
+    padding: 24px;
+    color: black;
+    background-color: #22D4FD;
+    text-align: center;
+    font-size: 20px; /* Diminuído para ser mais responsivo */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Media Queries para responsividade */
+@media (min-width: 768px) {
+    .cabecalho {
+        padding: 2% 10%; /* Aumenta o espaçamento em telas médias */
+    }
+    .apresentacao {
+        flex-direction: row; /* Retorna ao layout original em telas maiores */
+        margin: 5% 10%;
+    }
+
+    .apresentacao__conteudo {
+        width: 50%; /* Ajuste para dividir o espaço em telas maiores */
+    }
+}
+
+@media (min-width: 1024px) {
+    .cabecalho__menu {
+        gap: 80px; /* Espaçamento maior para telas grandes */
+    }
+
+    .apresentacao__conteudo__titulo,
+    .apresentacao__conteudo__titulo__sobre,
+    .destaque {
+        font-size: 36px; /* Ajuste maior para telas grandes */
+    }
+
+    .apresentacao__conteudo__paragrafo {
+        font-size: 24px; /* Volta ao tamanho padrão em telas grandes */
+    }
+
+    .apresentacao__links__link {
+        width: 280px; /* Mantém o tamanho original em telas maiores */
+        font-size: 24px; /* Ajuste para telas grandes */
+    }
+
+    .rodape {
+        font-size: 24px; /* Volta ao tamanho original em telas maiores */
+    }
+}
